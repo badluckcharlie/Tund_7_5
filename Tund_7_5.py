@@ -25,32 +25,33 @@ while True:
     except ValueError:
         print("input Error")
         continue
-    if choice ==1:
-        name= input("Enter new contact name: ")
-        number= input("Enter new contact number: ")
-        email= input("Enter new contact email: ")
-        add_contact(archieve, name, number, email)
-    elif choice ==2:
-        name= input("Enter contact name: ")
-        new_name= input("Enter new contact name: ")
-        new_number= input("Enter new contact number: ")
-        new_email= input("Enter new contact email: ")
-        change_contact(archieve, name, new_name, new_number, new_email)
-    elif choice ==3:
-        contact= input("Enter contact name: ")
-        search_contact(archieve, contact)
-    elif choice ==4:
-        name= input("Enter contact name: ")
-        delete_contact(archieve, name)
-    elif choice ==5:
+    if choice == 1:
+        name = input("Enter new contact name: ")
+        number = input("Enter new contact number: ")
+        email = input("Enter new contact email: ")
+        print(add_contact(archieve, name, number, email))
+    elif choice == 2:
+        name = input("Enter contact name to change: ")
+        new_name = input("Enter new contact name: ")
+        new_number = input("Enter new contact number: ")
+        new_email = input("Enter new contact email: ")
+        print(change_contact(archieve, name, new_name, new_number, new_email))
+    elif choice == 3:
+        contact = input("Enter contact name, number or email to search: ")
+        print(search_contact(archieve, contact))
+    elif choice == 4:
+        name = input("Enter contact name to delete: ")
+        print(delete_contact(archieve, name))
+    elif choice == 5:
         show_archieve(archieve)
-    elif choice ==6:
-        sort_archieve
-    elif choice ==7:
+    elif choice == 6:
+        sort_archieve(archieve)
+        print("Archieve sorted by name")
+    elif choice == 7:
         send_email()
-    elif choice ==8:
+    elif choice == 8:
         save_archieve(archieve, "archieve.txt")
-    elif choice ==9:
-        print ("exiting programm...")
+        print("Changes saved")
+    elif choice == 9:
+        print("Exiting program...")
         break
-
